@@ -1,0 +1,101 @@
+html {
+    margin: 0;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+main{
+    width: 100vw;
+    overflow: hidden;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; /* Adjust the z-index as needed */
+}
+
+
+.main-title{
+    height: 90%;
+    width: 90%;
+}
+
+.italic {
+    font-family: 'Rhetorik Serif', serif;
+    font-style: italic;
+    font-size: 12rem;
+    line-height: 0.1;
+    font-weight: 100;
+}
+
+.main-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure the title is above the canvas */
+    text-align: center;
+}
+
+
+@media screen and (max-width: 375px) {
+    .mobile-image--left,
+    .mobile-image--right {
+        display: block;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .text-overlay {
+        font-size: 6vw;
+    }
+
+    .text-container{
+        bottom: 12%;
+        right: 5%; 
+    }
+    
+    .italic {
+        font-family: 'Rhetorik Serif', serif;
+        font-style: italic;
+        font-size: 6rem;
+        line-height: 0.1;
+        font-weight: 100;
+    }
+    
+    .main-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1; /* Ensure the title is above the canvas */
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1512px) {
+    .italic {
+        font-family: 'Rhetorik Serif', serif;
+        font-style: italic;
+        font-size: 12rem;
+        line-height: 0.1;
+        font-weight: 100;
+    }
+    
+    .main-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1; /* Ensure the title is above the canvas */
+        text-align: center;
+    }
+}
