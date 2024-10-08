@@ -1,0 +1,137 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Change to space-between for different alignment */
+    align-items: center; /* Center items vertically */
+    background-color: coral;
+    height: 5rem; /* Set navbar height */
+    z-index: 2;
+    width: 100%; /* Full width for the navbar */
+}
+
+.navbar-row-top, .navbar-row-bottom {
+    width: 100%; /* Ensure navbars take full width */
+}
+
+.navbar-row-top a:hover,
+.navbar-row-bottom a:hover {
+    color: white; /* Change text color on hover */
+}
+
+.navbar-row-top ul, 
+.navbar-row-bottom ul {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Change to adjust alignment */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    list-style-type: none; /* Remove bullet points */
+    width: 100%;
+    margin-left: 10rem; /* Remove margin to avoid uneven spacing */
+    margin-right: 10rem; /* Remove margin to avoid uneven spacing */
+}
+
+.navbar-row-top li, 
+.navbar-row-bottom li {
+    margin: 0 2rem;
+}
+
+/* Adjustments for a uniform item appearance */
+.navbar-row-top a, 
+.navbar-row-bottom a {
+    display: inline-flex; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    transition: color 0.3s; /* Transition effects */
+}
+
+.navbar-row-top li:nth-last-child(2),
+.navbar-row-bottom li:nth-last-child(2),
+.navbar-row-top li:first-child,
+.navbar-row-bottom li:first-child {
+    display: none;
+    pointer-events: none; /* Prevent clicking */
+}
+
+.author, .section {
+    display: none; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    font-size: 2rem; /* Adjust font size if necessary */
+    font-family: 'Instrument Serif', serif; /* Use the specified font */
+}
+
+/* Hover effect for navbar items */
+.navbar-row-bottom a:hover {
+    color: white; /* Change text color on hover */
+    border-color: transparent; /* Keep border color transparent */
+    background-color: transparent;
+}
+
+.no-circle{
+    width: auto; /* Auto width to avoid circle */
+    height: auto; /* Auto height to avoid circle */
+    border-radius: 0; /* Ensure no circular border */
+    font-size: 2rem;
+}
+
+main {
+    flex: 1; /* Allow the main section to fill the available space */
+    display: block; /* Change to block layout to allow stacking */
+    width: 100%; /* Ensure main takes up full width */
+    background-color: cornflowerblue; /* Change background if necessary */
+    align-content: center;
+}
+
+.image-row {
+    font-size: 4rem;
+    font-family: 'Instrument Serif', serif;
+    background-color: aqua;
+    height: 20vh; /* Height of each row */
+    width: 100%; /* Ensure image rows extend across the page */
+    display: flex; /* Flexbox for centering content */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    margin-bottom: 20px; /* Add margin to create space between rows */
+    overflow: hidden; /* Hide overflowing images */
+}
+
+
+.italic {
+    font-family: 'Rhetorik Serif', serif;
+    font-style: italic;
+    font-size: 12rem;
+    line-height: 0.1;
+    font-weight: 100;
+}
+
+@media screen and (max-width: 375px) {
+    .italic {
+        font-family: 'Rhetorik Serif', serif;
+        font-style: italic;
+        font-size: 6rem;
+        line-height: 0.1;
+        font-weight: 100;
+    }
+}
+
+@media screen and (min-width: 1512px) {
+    .italic {
+        font-family: 'Rhetorik Serif', serif;
+        font-style: italic;
+        font-size: 12rem;
+        line-height: 0.1;
+        font-weight: 100;
+    }
+}

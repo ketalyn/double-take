@@ -1,0 +1,270 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Change to space-between for different alignment */
+    align-items: center; /* Center items vertically */
+    background-color: coral;
+    height: 10vh; /* Set navbar height */
+    z-index: 2;
+    width: 100%; /* Full width for the navbar */
+}
+
+.navbar-row-top a:hover,
+.navbar-row-bottom a:hover {
+    color: white; /* Change text color on hover */
+}
+
+.navbar-row-top ul {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Ensure consistent spacing between items */
+    padding: 0;
+    list-style-type: none; /* Remove bullet points */
+    width: 100%; /* Full width for better alignment */
+    margin-right: 10.7%; /* Keep right margin as is */
+    transform: translateX(6.4%); /* Shift the entire list 8rem to the left */
+}
+
+.navbar-row-top li{
+    margin: 0 6.2rem;
+}
+
+.navbar-row-bottom ul {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Ensure consistent spacing between items */
+    padding: 0;
+    list-style-type: none; /* Remove bullet points */
+    width: 100%; /* Full width for better alignment */
+    margin-left: 0; /* Remove excessive left margin */
+    margin-right: 10%; /* Keep right margin as is */
+    transform: translateX(5rem); /* Shift the entire list 8rem to the left */
+}
+
+.navbar-row-bottom li {
+    margin: 0 5.5rem;
+}
+
+/* Adjustments for a uniform item appearance */
+.navbar-row-top a, 
+.navbar-row-bottom a {
+    display: inline-flex; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    transition: color 0.3s; /* Transition effects */
+}
+
+.navbar-row-top li:nth-last-child(2),
+.navbar-row-bottom li:nth-last-child(2) {
+    display: none;
+    pointer-events: none; /* Prevent clicking */
+}
+
+.author, .section {
+    display: inline-flex; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    font-size: 2rem; /* Adjust font size if necessary */
+    font-family: 'Instrument Serif', serif; /* Use the specified font */
+}
+
+/* Specific item styling */
+.toggle-nav-btn {
+    padding-left: 2rem;
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Hover effect for navbar items */
+.pages-navbar-top a:hover,
+.pages-navbar-bottom a:hover {
+    color: white; /* Change text color on hover */
+    background-color: #d900ff; /* Change background color on hover */
+    border-color: transparent; /* Keep border color transparent */
+}
+
+/* Make the pages navbar fixed */
+.pages-navbar {
+    position: fixed; /* Ensure it appears above other elements */
+    width: 100%; /* Full width */
+    height: 5rem; /* Set height */
+    background-color: rgb(255, 75, 234); /* Set background color */
+    z-index: 10; /* Ensure it appears above other elements */
+    display: none; /* Initially hidden */
+    justify-content: space-between; /* Center items */
+    align-items: center; /* Center items */
+}
+
+
+#pages-navbar-top {
+    top: 0; /* Position over the top navbar */
+    width: 100%;
+}
+
+#pages-navbar-bottom {
+    bottom: 0; /* Position over the bottom navbar */
+    width: 100%;
+}
+
+.pages-navbar-top ul, 
+.pages-navbar-bottom ul {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Center items */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    list-style-type: none; /* Remove bullet points */
+    width: 100%;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.pages-navbar-top li,
+.pages-navbar-bottom li {
+    margin: 0 2rem; /* Adjust margin for uniform spacing */
+}
+
+.pages-navbar-top a, 
+.pages-navbar-bottom a {
+    display: inline-flex; /* Make it an inline flex container */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    border: 1px solid #000; /* Set default border */
+    border-radius: 50%; /* Make it circular */
+    background-color: white; /* Set background color */
+    transition: background-color 0.3s, border-color 0.3s; /* Add transitions */
+}
+
+/* Hover effect for normal navbar items */
+.navbar-row-bottom a:hover,
+.pages-navbar-top a:hover,
+.pages-navbar-bottom a:hover {
+    color: white; /* Change text color on hover */
+    background-color: #d900ff; /* Change background color on hover */
+    border-color: transparent; /* Keep border color transparent */
+}
+
+.pages-navbar-bottom .no-circle {
+    display: inline-flex; /* Remove flex properties */
+    align-items: center;
+    justify-content: center;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 0; /* Remove circular border */
+    border: none; /* Remove border */
+    background-color: transparent; /* No background color */
+    font-size: 2rem; /* Adjust font size if needed */
+}
+
+/* Optional hover effect */
+.pages-navbar-bottom .no-circle:hover {
+    color: #ffffff; /* Change text color on hover */
+    text-decoration: none; /* No underline on hover */
+    background-color: transparent; /* Remove white background */
+}
+
+#pages-navbar-top {
+    top: 0; /* Position over the top navbar */
+}
+
+#pages-navbar-bottom {
+    bottom: 0; /* Position over the bottom navbar */
+}
+
+.toggle-nav-btn{
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+}
+
+/* Special styling for the first item "1" */
+.current-page {
+    display: inline-flex; /* Inline block like other items */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 5vh;
+    height: 5vh;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    border: 1px solid #d900ff; /* Different border color */
+    border-radius: 50%; /* Keep it circular */
+    background-color: #d900ff; /* Different background color */
+    color: white; /* Different text color */
+}
+
+.no-circle{
+    width: auto; /* Auto width to avoid circle */
+    height: auto; /* Auto height to avoid circle */
+    border-radius: 0; /* Ensure no circular border */
+    font-size: 2rem;
+}
+
+main {
+    flex: 1; /* Allow the main section to fill the available space */
+    display: flex; /* Change to flex layout for centering */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    width: 77%; /* Set a width to make centering visible */
+    margin: 0 auto; /* Center the main section */
+    background-color: cornflowerblue; /* Background color */
+}
+
+.image-row {
+    font-size: 4rem;
+    font-family: 'Instrument Serif', serif;
+    background-color: aqua;
+    height: 15vh; /* Height of each row */
+    width: 100%; /* Ensure image rows extend across the page */
+    display: flex; /* Flexbox for centering content */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    margin-bottom: 20px; /* Add margin to create space between rows */
+    overflow: hidden; /* Hide overflowing images */
+}
+
+
+.italic {
+    font-family: 'Rhetorik Serif', serif;
+    font-style: italic;
+    font-size: 12rem;
+    line-height: 0.1;
+    font-weight: 100;
+}
+
+@media screen and (max-width: 375px) {
+    .italic {
+        font-family: 'Rhetorik Serif', serif;
+        font-style: italic;
+        font-size: 6rem;
+        line-height: 0.1;
+        font-weight: 100;
+    }
+}
+
+@media screen and (min-width: 1512px) {
+    .italic {
+        font-family: 'Rhetorik Serif', serif;
+        font-style: italic;
+        font-size: 12rem;
+        line-height: 0.1;
+        font-weight: 100;
+    }
+}
