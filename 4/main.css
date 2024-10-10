@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'NB International';
+    src: url('assets/NB\ International\ Regular\ Webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body {
     margin: 0;
     height: 100%;
@@ -5,26 +12,43 @@ html, body {
     flex-direction: column;
 }
 
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make the video cover the entire canvas */
+    z-index: -1; /* Position behind other elements */
+}
+
+nav, main {
+    position: relative; /* Ensure nav and main stay on top of the video */
+    z-index: 1; /* Bring these elements to the front */
+}
+
 .refresh-button {
     display: inline-block; /* Keep it inline with the text */
+    font-family: 'Instrument Serif', serif;
+    font-size: 2rem;
     color: white; /* Text color */
+    background-color: transparent;
     border: none; /* No border */
-    border-radius: 5px; /* Slightly rounded corners */
     text-decoration: none; /* Remove underline */
     transition: background-color 0.3s; /* Smooth transition for hover effect */
-    margin-left: -30rem;
     vertical-align: middle;
 }
 
 .refresh-button:hover {
     background-color: transparent !important; /* Force background to be transparent */
+    color:#d900ff;
 }
 
 .navbar {
     display: flex; /* Align items horizontally */
     justify-content: space-between; /* Change to space-between for different alignment */
     align-items: center; /* Center items vertically */
-    background-color: coral;
+    background-color: transparent;
     height: 10vh; /* Set navbar height */
     z-index: 2;
     width: 100%; /* Full width for the navbar */
@@ -38,31 +62,35 @@ html, body {
 
 .navbar-row-top ul {
     display: flex; /* Align items horizontally */
-    justify-content: space-between; /* Ensure consistent spacing between items */
-    padding: 0;
+    justify-content: center; /* Ensure consistent spacing between items */
+    padding: 0 2rem;
+    font-family: 'Instrument Serif', serif;
+    font-size: 2rem;
     list-style-type: none; /* Remove bullet points */
     width: 100%; /* Full width for better alignment */
-    margin-right: 10.7%; /* Keep right margin as is */
-    transform: translateX(6.4%); /* Shift the entire list 8rem to the left */
+    margin-right: 0rem;
+    margin-left: 1.5rem;
 }
 
 .navbar-row-top li{
-    margin: 0 6.2rem;
+    padding: 0 8rem;
 }
 
 .navbar-row-bottom ul {
     display: flex; /* Align items horizontally */
     justify-content: space-between; /* Ensure consistent spacing between items */
     align-items: center; /* Align items vertically */
-    padding: 0;
+    padding: 0 8.5rem;
     list-style-type: none; /* Remove bullet points */
     width: 100%; /* Full width for better alignment */
-    margin-left: 0; /* Remove excessive left margin */
-    margin-right: 10%; /* Keep right margin as is */
+    margin:0;
+    margin-left: 4.6rem;
+    z-index: 5;
 }
 
 .navbar-row-bottom li {
-    margin: 0 5.5rem;
+    margin: 0 2rem;
+    
 }
 
 /* Adjustments for a uniform item appearance */
@@ -74,10 +102,28 @@ html, body {
     width: 5vh; /* Circle diameter */
     height: 5vh; /* Circle diameter */
     text-decoration: none;
-    color: #000;
+    color: #D36D62;
     font-size: 2rem;
     font-family: 'Instrument Serif', serif;
     transition: color 0.3s; /* Transition effects */
+}
+
+.hidden-time {
+    padding: 0; /* Remove padding */
+    display: none; /* Hide the element initially */
+}
+
+.navbar-row-top li .time {
+    display: inline-block; /* Ensure the element can take padding */
+    padding: 0; /* Initial padding set to 0 */
+    margin: 0; /* Add margin to space it from adjacent elements */
+    transition: padding 0.3s; /* Smooth transition for padding change */
+}
+
+.navbar-row-top li .time.active {
+    padding: 0; /* Initial padding set to 0 */
+    margin-left: 11rem; /* Add margin to space it from adjacent elements */
+    margin-right: 8rem;
 }
 
 .navbar-row-bottom span{
@@ -85,23 +131,33 @@ html, body {
     align-items: center;
 }
 
-.navbar-row-top li:nth-last-child(2),
 .navbar-row-bottom li:nth-last-child(2) {
     display: none;
     pointer-events: none; /* Prevent clicking */
 }
 
-.author, .section {
+.author {
     display: inline-flex; /* Inline flex for centering */
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
     font-size: 2rem; /* Adjust font size if necessary */
     font-family: 'Instrument Serif', serif; /* Use the specified font */
+    white-space: nowrap; /* Prevent line breaks */
+    color: #D36D62;
+}
+
+.section {
+    display: inline-flex; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    font-size: 2rem; /* Adjust font size if necessary */
+    font-family: 'Instrument Serif', serif; /* Use the specified font */
+    color: #D36D62;
 }
 
 /* Specific item styling */
 .toggle-nav-btn {
-    padding-left: 2rem;
+    padding-right: 1.5rem;
     font-size: 2rem;
     border: none;
     background-color: transparent;
@@ -121,13 +177,12 @@ html, body {
     position: fixed; /* Ensure it appears above other elements */
     width: 100%; /* Full width */
     height: 5rem; /* Set height */
-    background-color: rgb(255, 75, 234); /* Set background color */
-    z-index: 10; /* Ensure it appears above other elements */
+    background-color: #D36D62; /* Set background color */
+    z-index: 50; /* Ensure it appears above other elements */
     display: none; /* Initially hidden */
     justify-content: space-between; /* Center items */
     align-items: center; /* Center items */
 }
-
 
 #pages-navbar-top {
     top: 0; /* Position over the top navbar */
@@ -164,12 +219,12 @@ html, body {
     width: 5vh; /* Circle diameter */
     height: 5vh; /* Circle diameter */
     text-decoration: none;
-    color: #000;
+    color: #D36D62;
     font-size: 2rem;
     font-family: 'Instrument Serif', serif;
-    border: 1px solid #000; /* Set default border */
+    border: 2px solid #D36D62; /* Set default border */
     border-radius: 50%; /* Make it circular */
-    background-color: white; /* Set background color */
+    background-color: #2C283E; /* Set background color */
     transition: background-color 0.3s, border-color 0.3s; /* Add transitions */
 }
 
@@ -224,9 +279,9 @@ html, body {
     height: 5vh;
     font-size: 2rem;
     font-family: 'Instrument Serif', serif;
-    border: 1px solid #d900ff; /* Different border color */
+    border: 1px solid #2C283E; /* Different border color */
     border-radius: 50%; /* Keep it circular */
-    background-color: #d900ff; /* Different background color */
+    background-color: #2C283E; /* Different background color */
     color: white; /* Different text color */
 }
 
@@ -243,47 +298,384 @@ main {
     flex-direction: column; /* Stack children vertically */
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
-    width: 90%; /* Set a width to make centering visible */
+    height: 100%;
+    width: 100%; /* Set a width to make centering visible */
     margin: 0 auto; /* Center the main section */
-    background-color: cornflowerblue; /* Background color */
+    background-color: transparent; /* Background color */
 }
 
 .TEXT {
     font-size: 4rem;
     font-family: 'Instrument Serif', serif;
     background-color: aqua;
-    height: 50%; /* Height of the text block */
+    height: 60%; /* Height of the text block */
     width: 60%; /* Width of the text block */
-    display: flex; /* Use flexbox for centering */
     justify-content: center; /* Center text horizontally */
     align-items: center; /* Center text vertically */
-    overflow: hidden; /* Hide overflowing content */
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 }
 
-.italic {
-    font-family: 'Rhetorik Serif', serif;
-    font-style: italic;
-    font-size: 12rem;
-    line-height: 0.1;
-    font-weight: 100;
+.TITLE{
+    font-size: 7rem;
+    font-family: 'Instrument Serif', serif;
+    background-color: aqua;
+    text-align: center;
 }
 
-@media screen and (max-width: 375px) {
-    .italic {
-        font-family: 'Rhetorik Serif', serif;
-        font-style: italic;
-        font-size: 6rem;
-        line-height: 0.1;
-        font-weight: 100;
+.quotation{
+    background-color: transparent;
+    font-size: 6rem;
+    font-family: 'Instrument Serif', serif;
+    height: 15%;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 0rem;
+}
+
+.story{
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'NB International', sans-serif;
+    margin: 1rem 0;
+    padding: 0 1rem;
+    color:#D36D62;
+}
+
+
+
+/*LAPTOP*/
+@media (min-width:1024px) {
+    .navbar{
+        width: 100%;
+        height: 10%;
     }
-}
 
-@media screen and (min-width: 1512px) {
-    .italic {
-        font-family: 'Rhetorik Serif', serif;
-        font-style: italic;
-        font-size: 12rem;
-        line-height: 0.1;
-        font-weight: 100;
+    .pages-navbar {
+        position: fixed; /* Ensure it appears above other elements */
+        width: 100%; /* Full width */
+        height: 10%; /* Set height */
+        background-color: #D36D62; /* Set background color */
+        z-index: 10; /* Ensure it appears above other elements */
+        display: none; /* Initially hidden */
+        justify-content: space-between; /* Center items */
+        align-items: center; /* Center items */
+    }
+
+    html, body {
+        margin: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .refresh-button {
+        display: inline-block; /* Keep it inline with the text */
+        font-family: 'Instrument Serif', serif;
+        font-size: 2rem;
+        color: white; /* Text color */
+        background-color: transparent;
+        border: none; /* No border */
+        text-decoration: none; /* Remove underline */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+        vertical-align: middle;
+    }
+    
+    .refresh-button:hover {
+        background-color: transparent !important; /* Force background to be transparent */
+        color:#d900ff;
+    }
+    
+    .navbar {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Change to space-between for different alignment */
+        align-items: center; /* Center items vertically */
+        background-color: transparent;
+        height: 10vh; /* Set navbar height */
+        z-index: 2;
+        width: 100%; /* Full width for the navbar */
+    }
+    
+    .navbar-row-top a:hover,
+    .navbar-row-bottom a:hover {
+        color: white; /* Change text color on hover */
+        background-color: none;
+    }
+    
+    .navbar-row-top ul {
+        display: flex; /* Align items horizontally */
+        justify-content: center; /* Ensure consistent spacing between items */
+        padding: 0 2rem;
+        font-family: 'Instrument Serif', serif;
+        font-size: 2rem;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin-right: 0rem;
+        margin-left: 1.5rem;
+    }
+    
+    .navbar-row-top li{
+        padding: 0 8rem;
+    }
+    
+    .navbar-row-bottom ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Ensure consistent spacing between items */
+        align-items: center; /* Align items vertically */
+        padding: 0 8.5rem;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin:0;
+        margin-left: 4.6rem;
+        z-index: 5;
+    }
+    
+    .navbar-row-bottom li {
+        margin: 0 2rem;
+        
+    }
+    
+    /* Adjustments for a uniform item appearance */
+    .navbar-row-top a, 
+    .navbar-row-bottom a {
+        display: inline-flex; /* Inline flex for centering */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        width: 5vh; /* Circle diameter */
+        height: 5vh; /* Circle diameter */
+        text-decoration: none;
+        color: #D36D62;
+        font-size: 2rem;
+        font-family: 'Instrument Serif', serif;
+        transition: color 0.3s; /* Transition effects */
+    }
+    
+    .hidden-time {
+        padding: 0; /* Remove padding */
+        display: none; /* Hide the element initially */
+        color:#D36D62;
+    }
+    
+    .navbar-row-top li .time {
+        display: inline-block; /* Ensure the element can take padding */
+        padding: 0; /* Initial padding set to 0 */
+        margin: 0; /* Add margin to space it from adjacent elements */
+        transition: padding 0.3s; /* Smooth transition for padding change */
+    }
+    
+    .navbar-row-top li .time.active {
+        padding: 0; /* Initial padding set to 0 */
+        margin-left: 11rem; /* Add margin to space it from adjacent elements */
+        margin-right: 8rem;
+    }
+    
+    .navbar-row-bottom span{
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-row-bottom li:nth-last-child(2) {
+        display: none;
+        pointer-events: none; /* Prevent clicking */
+    }
+    
+    .author {
+        display: inline-flex; /* Inline flex for centering */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        font-size: 2rem; /* Adjust font size if necessary */
+        font-family: 'Instrument Serif', serif; /* Use the specified font */
+        white-space: nowrap; /* Prevent line breaks */
+    }
+    
+    .section {
+        display: inline-flex; /* Inline flex for centering */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        font-size: 2rem; /* Adjust font size if necessary */
+        font-family: 'Instrument Serif', serif; /* Use the specified font */
+    }
+    
+    /* Specific item styling */
+    .toggle-nav-btn {
+        padding-right: 1.5rem;
+        font-size: 2rem;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    
+    /* Hover effect for navbar items */
+    .pages-navbar-top a:hover,
+    .pages-navbar-bottom a:hover {
+        color: white; /* Change text color on hover */
+        background-color: #d900ff; /* Change background color on hover */
+        border-color: transparent; /* Keep border color transparent */
+    }
+
+    .pages-navbar{
+        color: #D36D62;
+    }
+    
+    #pages-navbar-top {
+        top: 0; /* Position over the top navbar */
+        width: 100%;
+    }
+    
+    #pages-navbar-bottom {
+        bottom: 0; /* Position over the bottom navbar */
+        width: 100%;
+    }
+    
+    .pages-navbar-top ul, 
+    .pages-navbar-bottom ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Center items */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
+        list-style-type: none; /* Remove bullet points */
+        width: 100%;
+        margin-left: 10rem;
+        margin-right: 10rem;
+    }
+    
+    .pages-navbar-top li,
+    .pages-navbar-bottom li {
+        margin: 0 2rem; /* Adjust margin for uniform spacing */
+    }
+    
+    .pages-navbar-top a, 
+    .pages-navbar-bottom a {
+        display: inline-flex; /* Make it an inline flex container */
+        align-items: center; /* Center content vertically */
+        justify-content: center; /* Center content horizontally */
+        width: 5vh; /* Circle diameter */
+        height: 5vh; /* Circle diameter */
+        text-decoration: none;
+        color: #000;
+        font-size: 2rem;
+        font-family: 'Instrument Serif', serif;
+        border: 1px solid #2C283E; /* Set default border */
+        border-radius: 50%; /* Make it circular */
+        background-color: transparent; /* Set background color */
+        transition: background-color 0.3s, border-color 0.3s; /* Add transitions */
+    }
+    
+    /* Hover effect for normal navbar items */
+    .navbar-row-bottom a:hover,
+    .pages-navbar-top a:hover,
+    .pages-navbar-bottom a:hover {
+        color: white; /* Change text color on hover */
+        background-color: #2C283E; /* Change background color on hover */
+        border-color: transparent; /* Keep border color transparent */
+    }
+    
+    .pages-navbar-bottom .no-circle {
+        display: inline-flex; /* Remove flex properties */
+        align-items: center;
+        justify-content: center;
+        width: 5vh;
+        height: 5vh;
+        border-radius: 0; /* Remove circular border */
+        border: none; /* Remove border */
+        background-color: transparent; /* No background color */
+        font-size: 2rem; /* Adjust font size if needed */
+    }
+    
+    /* Optional hover effect */
+    .pages-navbar-bottom .no-circle:hover {
+        color: #ffffff; /* Change text color on hover */
+        text-decoration: none; /* No underline on hover */
+        background-color: transparent; /* Remove white background */
+    }
+    
+    #pages-navbar-top {
+        top: 0; /* Position over the top navbar */
+    }
+    
+    #pages-navbar-bottom {
+        bottom: 0; /* Position over the bottom navbar */
+    }
+    
+    .toggle-nav-btn{
+        font-size: 2rem;
+        border: none;
+        background-color: transparent;
+    }
+    
+    /* Special styling for the first item "1" */
+    .current-page {
+        display: inline-flex; /* Inline block like other items */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        width: 5vh;
+        height: 5vh;
+        font-size: 2rem;
+        font-family: 'Instrument Serif', serif;
+        border: 1px solid #2C283E; /* Different border color */
+        border-radius: 50%; /* Keep it circular */
+        background-color: #2C283E; /* Different background color */
+        color: white; /* Different text color */
+    }
+    
+    .no-circle{
+        width: auto; /* Auto width to avoid circle */
+        height: auto; /* Auto height to avoid circle */
+        border-radius: 0; /* Ensure no circular border */
+        font-size: 2rem;
+    }
+    
+    main {
+        flex: 1; /* Allow the main section to fill the available space */
+        display: flex; /* Change to flex layout for centering */
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        height: 100%;
+        width: 100%; /* Set a width to make centering visible */
+        margin: 0 auto; /* Center the main section */
+        background-color: transparent; /* Background color */
+    }
+    
+    .TEXT {
+        font-size: 4rem;
+        font-family: 'Instrument Serif', serif;
+        background-color: transparent;
+        height: 60%; /* Height of the text block */
+        width: 60%; /* Width of the text block */
+        justify-content: center; /* Center text horizontally */
+        align-items: center; /* Center text vertically */
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    
+    .TITLE{
+        font-size: 7rem;
+        font-family: 'Instrument Serif', serif;
+        background-color: transparent;
+        text-align: center;
+    }
+    
+    .quotation{
+        background-color: transparent;
+        font-size: 6rem;
+        font-family: 'Instrument Serif', serif;
+        height: 15%;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding-bottom: 0rem;
+        color:#D36D62;
+    }
+    
+    .story{
+        font-size: 1.5rem;
+        text-align: center;
+        font-family: 'NB International', sans-serif;
+        margin: 1rem 0;
+        padding: 0 1rem;
     }
 }

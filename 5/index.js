@@ -16,3 +16,8 @@ toggleNavButton.addEventListener('click', () => {
     pagesNavbarTop.style.display = isTopVisible ? 'none' : 'flex';  // Show/hide top navbar
     pagesNavbarBottom.style.display = isBottomVisible ? 'none' : 'flex'; // Show/hide bottom navbar
 });
+
+document.querySelectorAll('.carousel-container').forEach(carousel => {
+    carousel.style.animationDuration = '30s'; // Change this value to dynamically control the speed
+});
+

@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'NB International';
+    src: url('assets/fonts/NB_International.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body {
     margin: 0;
     height: 100%;
@@ -5,11 +12,15 @@ html, body {
     flex-direction: column;
 }
 
+body{
+    background-color:#2C283E;
+}
+
 .navbar {
     display: flex; /* Align items horizontally */
     justify-content: space-between; /* Change to space-between for different alignment */
     align-items: center; /* Center items vertically */
-    background-color: coral;
+    background-color: #D36D62;
     height: 5rem; /* Set navbar height */
     z-index: 2;
     width: 100%; /* Full width for the navbar */
@@ -42,15 +53,15 @@ html, body {
     display: inline-flex; /* Make it an inline flex container */
     align-items: center; /* Center content vertically */
     justify-content: center; /* Center content horizontally */
-    width: 5vh; /* Circle diameter */
-    height: 5vh; /* Circle diameter */
+    width: min(5vw, 3rem); /* Circle diameter */
+    height: min(5vw, 3rem); /* Circle diameter */
     text-decoration: none;
     color: #000;
     font-size: 2rem;
     font-family: 'Instrument Serif', serif;
-    border: 1px solid #000; /* Set default border */
+    border: 2px solid #2C283E; /* Set default border */
     border-radius: 50%; /* Make it circular */
-    background-color: white; /* Set background color */
+    background-color: #D36D62; /* Set background color */
     transition: background-color 0.3s, border-color 0.3s; /* Add transitions */
 }
 
@@ -58,7 +69,7 @@ html, body {
 .navbar-row-top a:hover, 
 .navbar-row-bottom a:hover {
     color: white; /* Change text color on hover */
-    background-color: #d900ff; /* Change background color on hover */
+    background-color: #2C283E; /* Change background color on hover */
     border-color: transparent; /* Keep border color transparent */
 }
 
@@ -71,12 +82,12 @@ html, body {
     border-radius: 0; /* Remove circular border */
     border: none; /* Remove border */
     background-color: transparent; /* No background color */
-    font-size: 2rem; /* Adjust font size if needed */
+    font-size: 2.2rem; /* Adjust font size if needed */
 }
 
 /* Optional: Hover effect for the ABOUT button */
 .navbar-row-bottom .no-circle:hover {
-    color: #d900ff; /* Add color change on hover */
+    color: #fff; /* Add color change on hover */
     background-color: transparent; /* Keep background transparent */
     text-decoration: none; /* Optional hover decoration */
 }
@@ -86,39 +97,179 @@ main {
     display: flex; /* Set main as a flex container */
     justify-content: center; /* Center items horizontally */
     align-items: center; /* Center items vertically */
+    color:#2C283E;
 }
 
 .main-title {
     font-size: 7rem;
     font-family: 'Instrument Serif', serif;
-    background-color: aqua;
+    background-color: transparent;
+    color:#D36D62;
     text-align: center;
 }
 
-.italic {
-    font-family: 'Rhetorik Serif', serif;
-    font-style: italic;
-    font-size: 12rem;
-    line-height: 0.1;
-    font-weight: 100;
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+    .navbar-row-top ul {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .navbar-row-bottom ul{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .navbar-row-top li, .navbar-row-bottom li{
+        margin: 0 1rem;
+    }
+
+    .navbar-row-bottom li:nth-child(2) {
+        margin-left: 3.2rem; /* Add margin to the second child */
+        /* You can also adjust other properties like margin-left, margin-top, etc. */
+    }    
+
+    .navbar-row-top a, 
+    .navbar-row-bottom a {
+    width: min(10vw, 3rem); /* Circle diameter */
+    height: min(10vw, 3rem); /* Circle diameter */
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
 }
 
-@media screen and (max-width: 375px) {
-    .italic {
-        font-family: 'Rhetorik Serif', serif;
-        font-style: italic;
+.navbar-row-bottom .no-circle {
+    width: min(10vw, 3rem); /* Circle diameter */
+    height: min(10vw, 3rem); /* Circle diameter */
+    border-radius: 0; /* Remove circular border */
+    border: none; /* Remove border */
+    background-color: transparent; /* No background color */
+    font-size: 2rem; /* Adjust font size if needed */
+    margin-right: 1.3rem;
+    margin-left: 1rem;
+}
+
+    .main-title {
+        font-size: 4rem;
+    }
+}
+
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) {
+    .navbar-row-top ul, .navbar-row-bottom ul {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .navbar-row-top li, .navbar-row-bottom li {
+        margin: 0 1.5rem;
+    }
+
+    .navbar-row-bottom li:nth-child(2) {
+        margin-left: 4rem; /* Add margin to the second child */
+        /* You can also adjust other properties like margin-left, margin-top, etc. */
+    }   
+
+    .navbar-row-top a, 
+    .navbar-row-bottom a {
+    width: min(10vw, 3rem); /* Circle diameter */
+    height: min(10vw, 3rem); /* Circle diameter */
+    font-size: 2.5rem;
+    font-family: 'Instrument Serif', serif;
+}
+
+.navbar-row-bottom .no-circle {
+    width: min(10vw, 3rem); /* Circle diameter */
+    height: min(10vw, 3rem); /* Circle diameter */
+    border-radius: 0; /* Remove circular border */
+    border: none; /* Remove border */
+    background-color: transparent; /* No background color */
+    font-size: 2.5rem; /* Adjust font size if needed */
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+    .main-title {
         font-size: 6rem;
-        line-height: 0.1;
-        font-weight: 100;
     }
 }
 
-@media screen and (min-width: 1512px) {
-    .italic {
-        font-family: 'Rhetorik Serif', serif;
-        font-style: italic;
-        font-size: 12rem;
-        line-height: 0.1;
-        font-weight: 100;
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+    .navbar-row-top ul, .navbar-row-bottom ul {
+        margin-left: 7rem;
+        margin-right: 7rem;
     }
+
+    .navbar-row-top li, .navbar-row-bottom li {
+        margin: 0 2rem;
+    }
+
+    .navbar-row-top a, 
+    .navbar-row-bottom a{
+        font-size: 2rem;
+    }
+
+    .navbar-row-bottom .no-circle{
+        font-size: 2rem;
+    }
+
+    .main-title {
+        font-size: 7rem;
+    }
+}
+
+/*LAPTOP*/
+@media (min-width:1024px) {
+    .navbar{
+        width: 100%;
+        height: 10%;
+    }
+
+    .navbar-row-top ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Ensure consistent spacing between items */
+        padding: 0;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin-right: 11rem; /* Keep right margin as is */
+        margin-left: 9.1rem;
+        transform: translateX(1.2%); /* Shift the entire list 8rem to the left */
+    }
+
+    .navbar-row-top li{
+        margin: 0 2rem;
+    }
+
+    .navbar-row-bottom ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Ensure consistent spacing between items */
+        padding: 0;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin-left: 9.2rem; /* Remove excessive left margin */
+        margin-right: 9.5%; /* Keep right margin as is */
+        transform: translateX(1%); /* Shift the entire list 8rem to the left */
+    }
+    
+    .navbar-row-bottom li {
+        margin: 0 2rem;
+    }
+
+    .navbar-row-top a, 
+    .navbar-row-bottom a {
+    display: inline-flex; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    transition: color 0.3s; /* Transition effects */
+}
+
+.navbar-row-bottom .no-circle{
+    margin-right: 3.4rem;
+}
 }

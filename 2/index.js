@@ -49,4 +49,34 @@ document.addEventListener('DOMContentLoaded', () => {
         pagesNavbarBottom.style.display = 'none'; // Hide the bottom navbar
         newToggleButton.style.display = 'none'; // Hide the new toggle button as well
     });
+
+    // Function to handle the dragging of images
+    const images = document.querySelectorAll('.side-image');
+
+    images.forEach(image => {
+        let isDragging = false;
+
+        // When mouse is pressed down on an image
+        image.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            image.style.cursor = 'grabbing'; // Change cursor to grabbing
+            image.offsetX = e.clientX - image.getBoundingClientRect().left;
+            image.offsetY = e.clientY - image.getBoundingClientRect().top;
+        });
+
+        // When mouse is moved
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                image.style.position = 'absolute';
+                image.style.left = `${e.clientX - image.offsetX}px`;
+                image.style.top = `${e.clientY - image.offsetY}px`;
+            }
+        });
+
+        // When mouse is released
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            image.style.cursor = 'grab'; // Change cursor back to grab
+        });
+    });
 });

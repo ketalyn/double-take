@@ -9,7 +9,8 @@ html, body {
     display: flex; /* Align items horizontally */
     justify-content: space-between; /* Change to space-between for different alignment */
     align-items: center; /* Center items vertically */
-    background-color: coral;
+    background-color: #2C283E;
+    color:#D36D62;
     height: 10vh; /* Set navbar height */
     z-index: 2;
     width: 100%; /* Full width for the navbar */
@@ -58,7 +59,7 @@ html, body {
     width: 5vh; /* Circle diameter */
     height: 5vh; /* Circle diameter */
     text-decoration: none;
-    color: #000;
+    color: #D36D62;
     font-size: 2rem;
     font-family: 'Instrument Serif', serif;
     transition: color 0.3s; /* Transition effects */
@@ -92,7 +93,7 @@ html, body {
 .pages-navbar-top a:hover,
 .pages-navbar-bottom a:hover {
     color: white; /* Change text color on hover */
-    background-color: #d900ff; /* Change background color on hover */
+    background-color: #D36D62; /* Change background color on hover */
     border-color: transparent; /* Keep border color transparent */
 }
 
@@ -101,7 +102,7 @@ html, body {
     position: fixed; /* Ensure it appears above other elements */
     width: 100%; /* Full width */
     height: 5rem; /* Set height */
-    background-color: rgb(255, 75, 234); /* Set background color */
+    background-color: #2C283E; /* Set background color */
     z-index: 10; /* Ensure it appears above other elements */
     display: none; /* Initially hidden */
     justify-content: space-between; /* Center items */
@@ -158,7 +159,7 @@ html, body {
 .pages-navbar-top a:hover,
 .pages-navbar-bottom a:hover {
     color: white; /* Change text color on hover */
-    background-color: #d900ff; /* Change background color on hover */
+    background-color: #D36D62; /* Change background color on hover */
     border-color: transparent; /* Keep border color transparent */
 }
 
@@ -204,9 +205,9 @@ html, body {
     height: 5vh;
     font-size: 2rem;
     font-family: 'Instrument Serif', serif;
-    border: 1px solid #d900ff; /* Different border color */
+    border: 2px solid #D36D62; /* Different border color */
     border-radius: 50%; /* Keep it circular */
-    background-color: #d900ff; /* Different background color */
+    background-color: #D36D62; /* Different background color */
     color: white; /* Different text color */
 }
 
@@ -222,13 +223,13 @@ main {
     display: block; /* Change to block layout to allow stacking */
     height: 100%;
     width: 100%; /* Ensure main takes up full width */
-    background-color: cornflowerblue; /* Change background if necessary */
+    background-color: #2C283E; /* Change background if necessary */
     align-content: center;
 }
 
 .CONTENT {
     font-family: 'Instrument Serif', serif;
-    background-color: aqua;
+    background-color: #2C283E;
     height: 100%; /* Ensure it has a specific height */
     overflow-y: auto; /* Allow scrolling */
     width: 90%; /* Container width */
@@ -241,19 +242,20 @@ main {
 }
 
 .CONTENT h1 {
-    font-size: 4rem; /* Adjust font size of the heading */
+    font-size: 6rem; /* Adjust font size of the heading */
     font-family: 'Instrument Serif', serif; /* Ensure consistent font */
     font-weight: normal;
-    background-color: burlywood;
+    background-color: #2C283E;
+    color:#D36D62;
     width: 100%; /* Make sure the h1 takes up full width */
     margin-bottom: 1%; /* Remove bottom margin */
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .image-row {
     font-size: 4rem;
     font-family: 'Instrument Serif', serif;
-    background-color: aqua;
+    background-color: #2C283E;
     height: 100%; /* Height of each row */
     width: 100%; /* Ensure image rows extend across the page */
     display: flex; /* Flexbox for centering content */
@@ -264,7 +266,7 @@ main {
 .cards{
     height: 100%;
     width: 100%;
-    background-color: #d900ff;
+    background-color: #2C283E;
     margin-bottom: 3%;
     display: flex;
     overflow-x: auto;
@@ -272,78 +274,232 @@ main {
     white-space: nowrap;
 }
 
-.card-item{
+.card-item {
     position: relative;
     min-width: 22rem;
     height: 100%;
-    background-color: aquamarine;
+    background-color: #2C283E;
     margin-right: 3rem;
     display: inline-block;
-    perspective: 1000px;
+    perspective: 1000px; /* Perspective for 3D effect */
+    z-index: 1;
 }
 
-.card{
+.card {
     width: 100%;
     height: 100%;
     position: absolute;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    border-radius: 10px;
+    transition: transform 0.6s; /* Animation for flipping */
+    transform-style: preserve-3d; /* Maintain 3D space */
+    /* Remove pointer-events: none; to allow hover effects */
 }
 
-.card-front, .card-back{
+.card-front, .card-back {
     position: absolute;
-    width: 100%;
+    min-width: 20rem;
     height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
+    backface-visibility: hidden; /* Hide the back face when not visible */
+    z-index: 1;
 }
 
-.card-front{
-    background: url('./assets/') no-repeat center center;
+.card-front.image1 {
+    background: url('./assets/shoes_walking_1.png') no-repeat center center;
     background-size: cover;
 }
 
-.card-back{
-    background-color: crimson;
+.card-front.image2 {
+    background: url('./assets/shoes_walking_2.png') no-repeat center center;
+    background-size: cover;
+}
+
+.card-front.image3 {
+    background: url('./assets/shoes_walking_3.png') no-repeat center center;
+    background-size: cover;
+}
+
+.card-front.image4 {
+    background: url('./assets/shoes_walking_4.png') no-repeat center center;
+    background-size: cover;
+}
+
+.card-front.image5 {
+    background: url('./assets/shoes_walking_5.png') no-repeat center center;
+    background-size: cover;
+}
+
+.card-front.image6 {
+    background: url('./assets/shoes_walking_6.png') no-repeat center center;
+    background-size: cover;
+}
+
+.card-front.image7 {
+    background: url('./assets/shoes_walking_7.png') no-repeat center center;
+    background-size: cover;
+}
+
+.card-front.image8 {
+    background: url('./assets/shoes_walking_8.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.card-front.image9 {
+    background: url('./assets/shoes_walking_9.png') no-repeat center center;
+    background-size: cover;
+}
+
+.card-back {
+    background-color: #D36D62; /* Color for the back side */
     display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    flex-direction: column; /* Stack items vertically */
+    color: #000; /* Text color */
+    transform: rotateY(180deg); /* Rotate to show back face */
+    padding: 1rem;
+    text-align: center;
+    max-width: 80%; /* Max width for content */
+}
+
+.card-quote {
+    width: 90%; /* Width of the quote area */
+    font-size: 1rem; /* Font size */
+    max-width: 22rem; /* Max width for quote */
+    white-space: normal; /* Allow text wrapping */
+    text-align: justify; /* Justify text */
+    line-height: 1; /* Line height */
+    background-color: #D36D62; /* Background color for the quote */
+    color: #2C283E;
+    padding: 0.5rem 1rem; /* Padding for the quote */
+    box-sizing: border-box; /* Include padding in width/height */
+    font-family: 'NB International', sans-serif;
+    text-align:initial;
+}
+
+/* This will ensure only the hovered card flips */
+.card-item:hover .card {
+    transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+
+
+/*LAPTOP*/
+@media (min-width:1024px) {
+    .navbar{
+        width: 100%;
+        height: 10%;
+    }
+
+    .navbar-row-top ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Ensure consistent spacing between items */
+        padding: 0;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin-right: 11rem; /* Keep right margin as is */
+        margin-left: 8.8rem;
+        transform: translateX(1%); /* Shift the entire list 8rem to the left */
+    }
+
+    .navbar-row-top li{
+        margin: 0 2rem;
+    }
+
+    .navbar-row-bottom ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Ensure consistent spacing between items */
+        padding: 0;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin-left: 8%; /* Remove excessive left margin */
+        margin-right: 13.5%; /* Keep right margin as is */
+        transform: translateX(2.5%); /* Shift the entire list 8rem to the left */
+    }
+    
+    .navbar-row-bottom li {
+        margin: 0 2rem;
+    }
+
+    .navbar-row-top a, 
+    .navbar-row-bottom a {
+    display: inline-flex; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #D36D62;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    transition: color 0.3s; /* Transition effects */
+}
+
+.toggle-nav-btn {
+    padding-right: 0rem;
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.pages-navbar {
+    position: fixed; /* Ensure it appears above other elements */
+    width: 100%; /* Full width */
+    height: 10%; /* Set height */
+    background-color: #2C283E; /* Set background color */
+    z-index: 10; /* Ensure it appears above other elements */
+    display: none; /* Initially hidden */
+    justify-content: space-between; /* Center items */
+    align-items: center; /* Center items */
+}
+
+.pages-navbar-top ul, 
+.pages-navbar-bottom ul {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Center items */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    list-style-type: none; /* Remove bullet points */
+    width: 100%;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.pages-navbar-top li,
+.pages-navbar-bottom li {
+    margin: 0 2rem; /* Adjust margin for uniform spacing */
+}
+
+.pages-navbar-top a, 
+.pages-navbar-bottom a {
+    display: inline-flex; /* Make it an inline flex container */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #D36D62;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    border: 2px solid #D36D62; /* Set default border */
+    border-radius: 50%; /* Make it circular */
+    background-color: #2C283E; /* Set background color */
+    transition: background-color 0.3s, border-color 0.3s; /* Add transitions */
+}
+
+.pages-navbar-bottom .no-circle {
+    display: inline-flex; /* Remove flex properties */
     align-items: center;
     justify-content: center;
-    color: #000;
-    font-size: 2rem;
-    transform: rotateY(180deg);
-    border-radius: 10px;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 0; /* Remove circular border */
+    border: none; /* Remove border */
+    background-color: transparent; /* No background color */
+    font-size: 2rem; /* Adjust font size if needed */
+    padding-right: 1rem;
 }
 
-.card-item:hover .card{
-    transform: rotateY(180deg);
+.pages-navbar-bottom li:nth-last-child(2){
+    padding-left: 0.8rem;
 }
-
-
-.italic {
-    font-family: 'Rhetorik Serif', serif;
-    font-style: italic;
-    font-size: 12rem;
-    line-height: 0.1;
-    font-weight: 100;
-}
-
-@media screen and (max-width: 375px) {
-    .italic {
-        font-family: 'Rhetorik Serif', serif;
-        font-style: italic;
-        font-size: 6rem;
-        line-height: 0.1;
-        font-weight: 100;
-    }
-}
-
-@media screen and (min-width: 1512px) {
-    .italic {
-        font-family: 'Rhetorik Serif', serif;
-        font-style: italic;
-        font-size: 12rem;
-        line-height: 0.1;
-        font-weight: 100;
-    }
 }

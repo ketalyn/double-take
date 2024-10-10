@@ -9,7 +9,8 @@ html, body {
     display: flex; /* Align items horizontally */
     justify-content: space-between; /* Change to space-between for different alignment */
     align-items: center; /* Center items vertically */
-    background-color: coral;
+    background-color: #D36D62;
+    color: #2C283E;
     height: 10vh; /* Set navbar height */
     z-index: 2;
     width: 100%; /* Full width for the navbar */
@@ -100,7 +101,7 @@ html, body {
     position: fixed; /* Ensure it appears above other elements */
     width: 100%; /* Full width */
     height: 5rem; /* Set height */
-    background-color: rgb(255, 75, 234); /* Set background color */
+    background-color: #D36D62; /* Set background color */
     z-index: 10; /* Ensure it appears above other elements */
     display: none; /* Initially hidden */
     justify-content: space-between; /* Center items */
@@ -203,10 +204,10 @@ html, body {
     height: 5vh;
     font-size: 2rem;
     font-family: 'Instrument Serif', serif;
-    border: 1px solid #d900ff; /* Different border color */
+    border: 1px solid #2C283E; /* Different border color */
     border-radius: 50%; /* Keep it circular */
-    background-color: #d900ff; /* Different background color */
-    color: white; /* Different text color */
+    background-color: #2C283E; /* Different background color */
+    color: #D36D62; /* Different text color */
 }
 
 .no-circle{
@@ -222,49 +223,194 @@ main {
     flex-direction: column; /* Stack children vertically */
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
-    width: 77%; /* Set a width to make centering visible */
+    width: 100%; /* Set a width to make centering visible */
     margin: 0 auto; /* Center the main section */
-    background-color: cornflowerblue; /* Background color */
+    background-color: #D36D62; /* Background color */
 }
 
 .image-row {
     font-size: 4rem;
     font-family: 'Instrument Serif', serif;
-    background-color: aqua;
+    background-color: #2C283E;
     height: 15vh; /* Height of each row */
-    width: 100%; /* Ensure image rows extend across the page */
+    width: 77%; /* Ensure image rows extend across the page */
     display: flex; /* Flexbox for centering content */
     justify-content: center; /* Center text horizontally */
     align-items: center; /* Center text vertically */
     margin-bottom: 20px; /* Add margin to create space between rows */
     overflow: hidden; /* Hide overflowing images */
+    white-space: nowrap;
 }
 
 
-.italic {
-    font-family: 'Rhetorik Serif', serif;
+.carousel-container{
+    display: inline-block;
+    animation: scrollPoem 90s linear infinite;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.poem{
+    display: inline-block;
+    animation: none;
+}
+
+.title-container {
+    text-align: center; /* Center the title */
+    margin-bottom: 10px; /* Space between title and poem */
+}
+
+.title {
     font-style: italic;
-    font-size: 12rem;
-    line-height: 0.1;
-    font-weight: 100;
+    font-size: 6rem;
+    color:#D36D62;
+    margin-right: 20px;
+    display: inline-block;
 }
 
-@media screen and (max-width: 375px) {
-    .italic {
-        font-family: 'Rhetorik Serif', serif;
-        font-style: italic;
-        font-size: 6rem;
-        line-height: 0.1;
-        font-weight: 100;
+.line{
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 2.5rem;
+    color:#D36D62;
+}
+
+@keyframes scrollPoem {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }
 
-@media screen and (min-width: 1512px) {
-    .italic {
-        font-family: 'Rhetorik Serif', serif;
-        font-style: italic;
-        font-size: 12rem;
-        line-height: 0.1;
-        font-weight: 100;
+.image-row:hover .carousel-container {
+    animation-play-state: running;
+}
+
+.carousel-container {
+    animation-play-state: paused;
+}
+
+/*LAPTOP*/
+@media (min-width:1024px) {
+    .navbar{
+        width: 100%;
+        height: 10%;
     }
+
+    .navbar-row-top ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Ensure consistent spacing between items */
+        padding: 0;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin-right: 10.8rem; /* Keep right margin as is */
+        margin-left: 8.8rem;
+        transform: translateX(1%); /* Shift the entire list 8rem to the left */
+    }
+
+    .navbar-row-top li{
+        margin: 0 2rem;
+    }
+
+    .navbar-row-bottom ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Ensure consistent spacing between items */
+        padding: 0;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin-left: 8%; /* Remove excessive left margin */
+        margin-right: 13%; /* Keep right margin as is */
+        transform: translateX(2.5%); /* Shift the entire list 8rem to the left */
+    }
+    
+    .navbar-row-bottom li {
+        margin: 0 2rem;
+    }
+
+    .navbar-row-top a, 
+    .navbar-row-bottom a {
+    display: inline-flex; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    transition: color 0.3s; /* Transition effects */
+}
+
+.toggle-nav-btn {
+    padding-right: 0rem;
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.pages-navbar {
+    position: fixed; /* Ensure it appears above other elements */
+    width: 100%; /* Full width */
+    height: 10%; /* Set height */
+    background-color: #D36D62; /* Set background color */
+    z-index: 10; /* Ensure it appears above other elements */
+    display: none; /* Initially hidden */
+    justify-content: space-between; /* Center items */
+    align-items: center; /* Center items */
+}
+
+.pages-navbar-top ul, 
+.pages-navbar-bottom ul {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Center items */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    list-style-type: none; /* Remove bullet points */
+    width: 100%;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.pages-navbar-top li,
+.pages-navbar-bottom li {
+    margin: 0 2rem; /* Adjust margin for uniform spacing */
+}
+
+.pages-navbar-top a, 
+.pages-navbar-bottom a {
+    display: inline-flex; /* Make it an inline flex container */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #2C283E;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    border: 2px solid #2C283E; /* Set default border */
+    border-radius: 50%; /* Make it circular */
+    background-color: #D36D62; /* Set background color */
+    transition: background-color 0.3s, border-color 0.3s; /* Add transitions */
+}
+
+.pages-navbar-bottom .no-circle {
+    display: inline-flex; /* Remove flex properties */
+    align-items: center;
+    justify-content: center;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 0; /* Remove circular border */
+    border: none; /* Remove border */
+    background-color: transparent; /* No background color */
+    font-size: 2rem; /* Adjust font size if needed */
+    padding-right: 1rem;
+}
+
+.pages-navbar-bottom li:nth-last-child(2){
+    padding-left: 0.8rem;
+}
 }

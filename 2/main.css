@@ -3,13 +3,14 @@ html, body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    background-color: #2C283E;
 }
 
 .navbar {
     display: flex; /* Align items horizontally */
     justify-content: space-between; /* Change to space-between for different alignment */
     align-items: center; /* Center items vertically */
-    background-color: coral;
+    background-color: #2C283E;
     height: 10vh; /* Set navbar height */
     z-index: 2;
     width: 100%; /* Full width for the navbar */
@@ -24,6 +25,7 @@ html, body {
     display: flex; /* Align items horizontally */
     justify-content: space-between; /* Ensure consistent spacing between items */
     padding: 0;
+    color:#D36D62;
     list-style-type: none; /* Remove bullet points */
     width: 100%; /* Full width for better alignment */
     margin-right: 10.7%; /* Keep right margin as is */
@@ -58,7 +60,7 @@ html, body {
     width: 5vh; /* Circle diameter */
     height: 5vh; /* Circle diameter */
     text-decoration: none;
-    color: #000;
+    color: #D36D62;
     font-size: 2rem;
     font-family: 'Instrument Serif', serif;
     transition: color 0.3s; /* Transition effects */
@@ -76,6 +78,7 @@ html, body {
     justify-content: center; /* Center horizontally */
     font-size: 2rem; /* Adjust font size if necessary */
     font-family: 'Instrument Serif', serif; /* Use the specified font */
+    color:#D36D62;
 }
 
 /* Specific item styling */
@@ -101,7 +104,7 @@ html, body {
     position: fixed; /* Ensure it appears above other elements */
     width: 100%; /* Full width */
     height: 5rem; /* Set height */
-    background-color: rgb(255, 75, 234); /* Set background color */
+    background-color: #2C283E; /* Set background color */
     z-index: 10; /* Ensure it appears above other elements */
     display: none; /* Initially hidden */
     justify-content: space-between; /* Center items */
@@ -144,12 +147,12 @@ html, body {
     width: 5vh; /* Circle diameter */
     height: 5vh; /* Circle diameter */
     text-decoration: none;
-    color: #000;
+    color: #D36D62;
     font-size: 2rem;
     font-family: 'Instrument Serif', serif;
     border: 1px solid #000; /* Set default border */
     border-radius: 50%; /* Make it circular */
-    background-color: white; /* Set background color */
+    background-color: 2C283E; /* Set background color */
     transition: background-color 0.3s, border-color 0.3s; /* Add transitions */
 }
 
@@ -157,8 +160,8 @@ html, body {
 .navbar-row-bottom a:hover,
 .pages-navbar-top a:hover,
 .pages-navbar-bottom a:hover {
-    color: white; /* Change text color on hover */
-    background-color: #d900ff; /* Change background color on hover */
+    color: #2C283E; /* Change text color on hover */
+    background-color: #D36D62; /* Change background color on hover */
     border-color: transparent; /* Keep border color transparent */
 }
 
@@ -204,9 +207,9 @@ html, body {
     height: 5vh;
     font-size: 2rem;
     font-family: 'Instrument Serif', serif;
-    border: 1px solid #d900ff; /* Different border color */
+    border: 1px solid #D36D62; /* Different border color */
     border-radius: 50%; /* Keep it circular */
-    background-color: #d900ff; /* Different background color */
+    background-color: #D36D62; /* Different background color */
     color: white; /* Different text color */
 }
 
@@ -223,7 +226,7 @@ main {
     justify-content: center;
     height: 80%;
     width: 95%; /* Ensure main takes up full width */
-    background-color: cornflowerblue; /* Change background if necessary */
+    background-color: #2C283E; /* Change background if necessary */
     margin: 0 auto;
 }
 
@@ -242,7 +245,7 @@ main {
 
 .TEXT {
     font-family: 'Instrument Serif', serif;
-    background-color: aqua;
+    background-color: #D36D62;
     height: 100%; /* Ensure it has a specific height */
     overflow-y: auto; /* Allow scrolling */
     width: 90%; /* Container width */
@@ -259,7 +262,7 @@ main {
     display: flex; /* Enable flexbox for the content */
     flex-wrap: wrap; /* Allow items to wrap */
     align-items: flex-start; /* Align items vertically centered */
-    background-color: blueviolet;
+    background-color: #D36D62;
     width: 100%;
     height: 100%;
     
@@ -271,6 +274,7 @@ main {
 }
 
 .side-image {
+    cursor: grab;
     position: absolute;
     width: 200px; /* Adjust image width as needed */
     height: auto; /* Maintain aspect ratio */
@@ -288,75 +292,174 @@ main {
 }
 
 .image-3 {
-    top: 100%; /* Position this image 30% from the top */
-    right: 10%; /* Adjust right positioning as needed */
+    top: 120%; /* Position this image 30% from the top */
+    right: 45%; /* Adjust right positioning as needed */
 }
 
 .image-4 {
-    top: 100%; /* Position this image 30% from the top */
-    right: 10%; /* Adjust right positioning as needed */
+    top: 170%; /* Position this image 30% from the top */
+    right: 25%; /* Adjust right positioning as needed */
 }
 
 .image-5 {
-    top: 150%; /* Position this image 30% from the top */
+    top: 210%; /* Position this image 30% from the top */
     right: 10%; /* Adjust right positioning as needed */
 }
 
 .image-6 {
-    top: 210%; /* Position this image 30% from the top */
-    right: 10%; /* Adjust right positioning as needed */
+    top: 250%; /* Position this image 30% from the top */
+    right: 14%; /* Adjust right positioning as needed */
 }
 
 .TEXT h1 {
     font-size: 4rem; /* Adjust font size of the heading */
     font-family: 'Instrument Serif', serif; /* Ensure consistent font */
     margin-bottom: 1rem; /* Space between heading and body text */
+    margin-left: 1.5rem;
     line-height: 1.2; /* Adjust line-height for better readability */
     font-weight: normal;
-    background-color: burlywood;
+    background-color: #D36D62;
+    color:#2C283E;
     width: 100%; /* Make sure the h1 takes up full width */
 }
 
 .body-text {
     font-size: 1.2rem; /* Adjust font size of the body text */
-    font-family: 'Instrument Serif', serif; /* Use your desired font */
+    font-family: 'NB International', sans-serif; /* Use your desired font */
+    text-align:justify;
+    word-spacing: -1px;
     line-height: 1.3; /* Set line-height for better readability */
-    color: #333; /* Set text color, adjust as needed */
+    color: #2C283E; /* Set text color, adjust as needed */
     text-align: justify; /* Align text evenly on both sides */
     margin-top: 1rem; /* Space between heading and body text */
     padding: 0 1.5rem; /* Add padding to the sides for better layout */
     padding-bottom: 5rem;
     height: 100%;
     width: 60%; /* Make sure the body text takes up full width */
-    background-color: bisque;
+    background-color: #D36D62;
     flex: 0 0 60%;
 }
 
 
-.italic {
-    font-family: 'Rhetorik Serif', serif;
-    font-style: italic;
-    font-size: 12rem;
-    line-height: 0.1;
-    font-weight: 100;
+
+/*LAPTOP*/
+@media (min-width:1024px) {
+    .navbar{
+        width: 100%;
+        height: 10%;
+    }
+
+    .navbar-row-top ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Ensure consistent spacing between items */
+        padding: 0;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin-right: 11rem; /* Keep right margin as is */
+        margin-left: 8.8rem;
+        transform: translateX(1%); /* Shift the entire list 8rem to the left */
+    }
+
+    .navbar-row-top li{
+        margin: 0 2rem;
+    }
+
+    .navbar-row-bottom ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Ensure consistent spacing between items */
+        padding: 0;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin-left: 8%; /* Remove excessive left margin */
+        margin-right: 17.8%; /* Keep right margin as is */
+        transform: translateX(2.5%); /* Shift the entire list 8rem to the left */
+    }
+    
+    .navbar-row-bottom li {
+        margin: 0 2rem;
+    }
+
+    .navbar-row-top a, 
+    .navbar-row-bottom a {
+    display: inline-flex; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #D36D62;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    transition: color 0.3s; /* Transition effects */
 }
 
-@media screen and (max-width: 375px) {
-    .italic {
-        font-family: 'Rhetorik Serif', serif;
-        font-style: italic;
-        font-size: 6rem;
-        line-height: 0.1;
-        font-weight: 100;
-    }
+.toggle-nav-btn {
+    padding-right: 0rem;
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-@media screen and (min-width: 1512px) {
-    .italic {
-        font-family: 'Rhetorik Serif', serif;
-        font-style: italic;
-        font-size: 12rem;
-        line-height: 0.1;
-        font-weight: 100;
-    }
+.pages-navbar {
+    position: fixed; /* Ensure it appears above other elements */
+    width: 100%; /* Full width */
+    height: 10%; /* Set height */
+    background-color: #2C283E; /* Set background color */
+    z-index: 10; /* Ensure it appears above other elements */
+    display: none; /* Initially hidden */
+    justify-content: space-between; /* Center items */
+    align-items: center; /* Center items */
+}
+
+.pages-navbar-top ul, 
+.pages-navbar-bottom ul {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Center items */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    list-style-type: none; /* Remove bullet points */
+    width: 100%;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.pages-navbar-top li,
+.pages-navbar-bottom li {
+    margin: 0 2rem; /* Adjust margin for uniform spacing */
+}
+
+.pages-navbar-top a, 
+.pages-navbar-bottom a {
+    display: inline-flex; /* Make it an inline flex container */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #D36D62;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    border: 2px solid #D36D62; /* Set default border */
+    border-radius: 50%; /* Make it circular */
+    background-color: 2C283E; /* Set background color */
+    transition: background-color 0.3s, border-color 0.3s; /* Add transitions */
+}
+
+.pages-navbar-bottom .no-circle {
+    display: inline-flex; /* Remove flex properties */
+    align-items: center;
+    justify-content: center;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 0; /* Remove circular border */
+    border: none; /* Remove border */
+    background-color: transparent; /* No background color */
+    font-size: 2rem; /* Adjust font size if needed */
+    padding-right: 1rem;
+}
+
+.pages-navbar-bottom li:nth-last-child(2){
+    padding-left: 0.8rem;
+}
 }

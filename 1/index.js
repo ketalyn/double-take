@@ -70,15 +70,56 @@ toggleNavButton.addEventListener('click', () => {
 
 // Custom times and dates for each image
 const imageInfo = {
-    "Image 1": { time: "10:00", date: "011024" },
-    "Image 2": { time: "11:00", date: "021024" },
-    "Image 3": { time: "12:00", date: "031024" },
-    "Image 4": { time: "01:00", date: "041024" },
-    "Image 5": { time: "02:00", date: "051024" },
-    "Image 6": { time: "03:00", date: "061024" },
-    "Image 7": { time: "04:00", date: "071024" },
-    "Image 8": { time: "05:00", date: "081024" },
-    "Image 9": { time: "06:00", date: "091024" }
+    "Image 1": { time: "16:31", date: "02.09.24" },
+    "Image 2": { time: "16:31", date: "02.09.24" },
+    "Image 3": { time: "16:29", date: "02.09.24" },
+    "Image 4": { time: "16:29", date: "02.09.24" },
+    "Image 5": { time: "16:28", date: "02.09.24" },
+    "Image 6": { time: "16:28", date: "02.09.24" },
+    "Image 7": { time: "16:28", date: "02.09.24" },
+    "Image 8": { time: "16:28", date: "02.09.24" },
+    "Image 9": { time: "20:21", date: "01.09.24" },
+    "Image 10": { time: "20:21", date: "01.09.24" },
+    "Image 11": { time: "20:11", date: "01.09.24" },
+    "Image 12": { time: "20:10", date: "01.09.24" },
+    "Image 13": { time: "20:10", date: "01.09.24" },
+    "Image 14": { time: "13:34", date: "01.09.24" },
+    "Image 15": { time: "13:33", date: "01.09.24" },
+    "Image 16": { time: "13:33", date: "01.09.24" },
+    "Image 17": { time: "13:26", date: "01.09.24" },
+    "Image 18": { time: "13:26", date: "01.09.24" },
+    "Image 19": { time: "13:26", date: "01.09.24" },
+    "Image 20": { time: "13:25", date: "01.09.24" },
+    "Image 21": { time: "13:25", date: "01.09.24" },
+    "Image 22": { time: "13:24", date: "01.09.24" },
+    "Image 23": { time: "16:27", date: "02.09.24" },
+    "Image 24": { time: "16:24", date: "02.09.24" },
+    "Image 25": { time: "16:23", date: "02.09.24" },
+    "Image 26": { time: "16:22", date: "02.09.24" },
+    "Image 27": { time: "16:22", date: "02.09.24" },
+    "Image 28": { time: "16:16", date: "02.09.24" },
+    "Image 29": { time: "16:15", date: "02.09.24" },
+    "Image 30": { time: "16:12", date: "02.09.24" },
+    "Image 31": { time: "22:24", date: "02.09.24" },
+    "Image 32": { time: "16:06", date: "02.09.24" },
+    "Image 33": { time: "16:00", date: "02.09.24" },
+    "Image 34": { time: "15:59", date: "02.09.24" },
+    "Image 35": { time: "15:58", date: "02.09.24" },
+    "Image 36": { time: "15:55", date: "02.09.24" },
+    "Image 37": { time: "22:14", date: "02.09.24" },
+    "Image 38": { time: "15:52", date: "02.09.24" },
+    "Image 39": { time: "15:11", date: "02.09.24" },
+    "Image 40": { time: "15:10", date: "02.09.24" },
+    "Image 41": { time: "15:06", date: "02.09.24" },
+    "Image 42": { time: "15:06", date: "02.09.24" },
+    "Image 43": { time: "15:04", date: "02.09.24" },
+    "Image 44": { time: "15:04", date: "02.09.24" },
+    "Image 45": { time: "10:46", date: "02.09.24" },
+    "Image 46": { time: "10:45", date: "02.09.24" },
+    "Image 47": { time: "11:47", date: "31.08.24" },
+    "Image 48": { time: "17:49", date: "30.08.24" },
+    "Image 49": { time: "21:33", date: "28.08.24" },
+    "Image 50": { time: "21:31", date: "28.08.24" }
 };
 
 // Select the TIME and DATE elements in the navbar
@@ -90,17 +131,15 @@ carousels.forEach(carousel => {
     const images = carousel.querySelectorAll('img');
 
     images.forEach(image => {
-        image.addEventListener('click', () => {
-            // Get the alt text of the clicked image
+        // Function to handle display of time and date
+        const showImageInfo = () => {
             const altText = image.alt;
 
-            // Check if the image has custom time and date information
             if (imageInfo[altText]) {
-                // Update the TIME and DATE elements with the custom info, no labels
+                // Update the TIME and DATE elements with the custom info
                 timeElement.textContent = imageInfo[altText].time;
                 dateElement.textContent = imageInfo[altText].date;
             } else {
-                // Default fallback if no custom info is found
                 timeElement.textContent = '';
                 dateElement.textContent = '';
             }
@@ -108,6 +147,15 @@ carousels.forEach(carousel => {
             // Hide both the top and bottom navbars when an image is clicked
             pagesNavbarTop.style.display = 'none';
             pagesNavbarBottom.style.display = 'none';
+        };
+
+        // Click event for desktop
+        image.addEventListener('click', showImageInfo);
+        
+        // Touch event for mobile
+        image.addEventListener('touchend', (e) => {
+            e.preventDefault(); // Prevent default touch behavior
+            showImageInfo();
         });
     });
 });

@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -9,7 +10,7 @@ html, body {
     display: flex; /* Align items horizontally */
     justify-content: space-between; /* Change to space-between for different alignment */
     align-items: center; /* Center items vertically */
-    background-color: coral;
+    background-color: rgb(255, 255, 255);
     height: 10vh; /* Set navbar height */
     z-index: 2;
     width: 100%; /* Full width for the navbar */
@@ -17,7 +18,7 @@ html, body {
 
 .navbar-row-top a:hover,
 .navbar-row-bottom a:hover {
-    color: white; /* Change text color on hover */
+    color: #D36D62; /* Change text color on hover */
 }
 
 .navbar-row-top ul {
@@ -92,7 +93,7 @@ html, body {
     position: fixed; /* Ensure it appears above other elements */
     width: 100%; /* Full width */
     height: 5rem; /* Set height */
-    background-color: rgb(255, 75, 234); /* Set background color */
+    /* background-color: rgb(255, 75, 234); Set background color */
     z-index: 10; /* Ensure it appears above other elements */
     display: none; /* Initially hidden */
     justify-content: space-between; /* Center items */
@@ -149,7 +150,7 @@ html, body {
 .pages-navbar-top a:hover,
 .pages-navbar-bottom a:hover {
     color: white; /* Change text color on hover */
-    background-color: #d900ff; /* Change background color on hover */
+    background-color: #2C283E; /* Change background color on hover */
     border-color: transparent; /* Keep border color transparent */
 }
 
@@ -167,7 +168,7 @@ html, body {
 
 /* Optional hover effect */
 .pages-navbar-bottom .no-circle:hover {
-    color: #ffffff; /* Change text color on hover */
+    color: #D36D62; /* Change text color on hover */
     text-decoration: none; /* No underline on hover */
     background-color: transparent; /* Remove white background */
 }
@@ -195,9 +196,9 @@ html, body {
     height: 5vh;
     font-size: 2rem;
     font-family: 'Instrument Serif', serif;
-    border: 1px solid #d900ff; /* Different border color */
+    border: 1px solid #2C283E; /* Different border color */
     border-radius: 50%; /* Keep it circular */
-    background-color: #d900ff; /* Different background color */
+    background-color: #2C283E; /* Different background color */
     color: white; /* Different text color */
 }
 
@@ -238,14 +239,14 @@ main {
     flex: 1; /* Allow the main section to fill the available space */
     display: block; /* Change to block layout to allow stacking */
     width: 100%; /* Ensure main takes up full width */
-    background-color: cornflowerblue; /* Change background if necessary */
+    background-color: rgb(255, 255, 255); /* Change background if necessary */
     align-content: center;
 }
 
 .image-row {
     font-size: 4rem;
     font-family: 'Instrument Serif', serif;
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
     height: 20vh; /* Height of each row */
     width: 100%; /* Ensure image rows extend across the page */
     display: flex; /* Flexbox for centering content */
@@ -289,22 +290,520 @@ main {
     font-weight: 100;
 }
 
-@media screen and (max-width: 375px) {
-    .italic {
-        font-family: 'Rhetorik Serif', serif;
-        font-style: italic;
-        font-size: 6rem;
-        line-height: 0.1;
-        font-weight: 100;
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+    .navbar{
+        height: 5rem;
+    }
+
+    .navbar-row-top ul {
+        padding: 1rem;
+    }
+
+    .navbar-row-bottom ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Ensure consistent spacing between items */
+        padding: 0;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin-left: 0; /* Remove excessive left margin */
+        margin-right: 10%; /* Keep right margin as is */
+        transform: translateX(2rem); /* Shift the entire list 8rem to the left */
+    }
+
+    .navbar-row-top li, .navbar-row-bottom li{
+        margin: 0 1rem;
+    }
+
+    .navbar-row-top a, 
+    .navbar-row-bottom a {
+    width: min(15vw, 4rem); /* Circle diameter */
+    height: min(15vw, 4rem); /* Circle diameter */
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+}
+
+.image-time{
+    padding-top:0.7rem;
+}
+
+.navbar-row-bottom .no-circle {
+    width: min(10vw, 3rem); /* Circle diameter */
+    height: min(10vw, 3rem); /* Circle diameter */
+    border-radius: 0; /* Remove circular border */
+    border: none; /* Remove border */
+    background-color: transparent; /* No background color */
+    font-size: 2rem; /* Adjust font size if needed */
+}
+
+.pages-navbar {
+    position: fixed; /* Ensure it appears above other elements */
+    width: 100%; /* Full width */
+    height: 5rem; /* Set height */
+    background-color: rgb(255, 75, 234); /* Set background color */
+    z-index: 10; /* Ensure it appears above other elements */
+    display: none; /* Initially hidden */
+    justify-content: space-between; /* Center items */
+    align-items: center; /* Center items */
+}
+
+.pages-navbar-top ul, 
+.pages-navbar-bottom ul {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Center items */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    list-style-type: none; /* Remove bullet points */
+    width: 100%;
+}
+
+.pages-navbar-top li,
+.pages-navbar-bottom li {
+    margin: 0 2rem; /* Adjust margin for uniform spacing */
+}
+
+.pages-navbar-top a, 
+.pages-navbar-bottom a {
+    display: inline-flex; /* Make it an inline flex container */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    border: 1px solid #000; /* Set default border */
+    border-radius: 50%; /* Make it circular */
+    background-color: white; /* Set background color */
+    transition: background-color 0.3s, border-color 0.3s; /* Add transitions */
+}
+
+.pages-navbar-bottom .no-circle {
+    width: 5vh;
+    height: 5vh;
+    font-size: 2rem; /* Adjust font size if needed */
+    padding-right: 1rem;
+}
+
+    .main-title {
+        font-size: 4rem;
     }
 }
 
-@media screen and (min-width: 1512px) {
-    .italic {
-        font-family: 'Rhetorik Serif', serif;
-        font-style: italic;
-        font-size: 12rem;
-        line-height: 0.1;
-        font-weight: 100;
+/* Small devices (tablets, 576px and up) */
+@media (min-width: 576px) {
+    .navbar{
+        height: 10%;
+        width: 100%;
     }
+    
+    .navbar-row-top ul {
+        padding: 1rem;
+        margin-right: 0.7%; /* Keep right margin as is */
+        transform: translateX(6.4%); /* Shift the entire list 8rem to the left */
+    }
+    
+    .navbar-row-top li{
+        margin: 0 1rem;
+    }
+
+    .navbar-row-bottom{
+        margin-left:-2.5rem;
+        width: 100%;
+    }
+
+    .navbar-row-bottom ul {
+        padding: 2rem;
+        width: 100%; /* Full width for better alignment */
+        margin-left: 0; /* Remove excessive left margin */
+        margin-right: 10%; /* Keep right margin as is */
+        transform: translateX(0rem); /* Shift the entire list 8rem to the left */
+    }
+
+    .navbar-row-bottom li{
+        margin: 0 0rem;
+        padding-left: 0rem;
+    }
+
+    .navbar-row-top a, 
+    .navbar-row-bottom a {
+    width: min(10vw, 3rem); /* Circle diameter */
+    height: min(10vw, 3rem); /* Circle diameter */
+    font-size: 3rem;
+    font-family: 'Instrument Serif', serif;
+}
+
+.image-time{
+    padding: 0 0rem;
+    font-size: 3rem;
+}
+
+.image-date{
+    font-size: 3rem;
+    padding-right: 12rem;
+}
+
+.toggle-nav-btn{
+    font-size: 3rem;
+    padding-right: 2.5rem;
+}
+
+.pages-navbar {
+    position: fixed; /* Ensure it appears above other elements */
+    width: 100%; /* Full width */
+    height: 100%; /* Set height */
+    background-color: rgb(255, 255, 255); Set background color
+    z-index: 10; /* Ensure it appears above other elements */
+    display: none; /* Initially hidden */
+    justify-content: space-between; /* Center items */
+    align-items: center; /* Center items */
+}
+
+.pages-navbar-top ul {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Center items */
+    padding: 0 3rem; /* Remove padding */
+    margin: 0; /* Remove margin */
+    list-style-type: none; /* Remove bullet points */
+    width: 100%;
+}
+
+.pages-navbar-bottom ul {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Center items */
+    padding: 0 2rem;
+    padding-bottom: 2rem;
+    margin: 0; /* Remove margin */
+    list-style-type: none; /* Remove bullet points */
+    width: 100%;
+}
+
+.pages-navbar-top li,
+.pages-navbar-bottom li {
+    margin: 0 2rem; /* Adjust margin for uniform spacing */
+}
+
+.pages-navbar-top a, 
+.pages-navbar-bottom a {
+    display: inline-flex; /* Make it an inline flex container */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2.5rem;
+    font-family: 'Instrument Serif', serif;
+    border: 1px solid #000; /* Set default border */
+    border-radius: 50%; /* Make it circular */
+    background-color: white; /* Set background color */
+    transition: background-color 0.3s, border-color 0.3s; /* Add transitions */
+}
+
+.pages-navbar-bottom .no-circle {
+    width: 5vh;
+    height: 5vh;
+    font-size: 2.5rem; /* Adjust font size if needed */
+    padding-right: 1rem;
+}
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+    .navbar{
+        width: 100%;
+    }
+
+    .navbar-row-top ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Ensure consistent spacing between items */
+        padding: 0;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin-right: 20%; /* Keep right margin as is */
+        transform: translateX(19.5%); /* Shift the entire list 8rem to the left */
+    }
+
+    .navbar-row-top li{
+        margin: 0 2rem;
+    }
+
+    .navbar-row-bottom ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Ensure consistent spacing between items */
+        padding: 0;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin-left: 4.5%; /* Remove excessive left margin */
+        margin-right: 5%; /* Keep right margin as is */
+        transform: translateX(4.5rem); /* Shift the entire list 8rem to the left */
+    }
+    
+    .navbar-row-bottom li {
+        margin: 0 6rem;
+    }
+
+    .navbar-row-top a, 
+    .navbar-row-bottom a {
+    display: inline-flex; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    transition: color 0.3s; /* Transition effects */
+}
+
+.image-time{
+    display: inline-flex; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    transition: background-color 0.3s, border-color 0.3s; /* Transition effects */
+}
+
+.image-date{
+    display: inline-flex; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    transition: background-color 0.3s, border-color 0.3s; /* Transition effects */
+}
+
+.toggle-nav-btn {
+    padding-left: 2rem;
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.pages-navbar {
+    position: fixed; /* Ensure it appears above other elements */
+    width: 100%; /* Full width */
+    height: 10%; /* Set height */
+    /* background-color: rgb(255, 75, 234); Set background color */
+    z-index: 10; /* Ensure it appears above other elements */
+    display: none; /* Initially hidden */
+    justify-content: space-between; /* Center items */
+    align-items: center; /* Center items */
+}
+
+.pages-navbar-top ul{
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Center items */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    list-style-type: none; /* Remove bullet points */
+    width: 100%;
+    margin-left: 6.8rem;
+    margin-right: 6.8rem;
+}
+
+.pages-navbar-bottom ul {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Center items */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    list-style-type: none; /* Remove bullet points */
+    width: 100%;
+    margin-left: 7rem;
+    margin-right: 6.8rem;
+}
+
+.pages-navbar-top li,
+.pages-navbar-bottom li {
+    margin: 0 2rem; /* Adjust margin for uniform spacing */
+}
+
+.pages-navbar-top a, 
+.pages-navbar-bottom a {
+    display: inline-flex; /* Make it an inline flex container */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    border: 1px solid #000; /* Set default border */
+    border-radius: 50%; /* Make it circular */
+    background-color: white; /* Set background color */
+    transition: background-color 0.3s, border-color 0.3s; /* Add transitions */
+}
+
+.pages-navbar-bottom .no-circle {
+    display: inline-flex; /* Remove flex properties */
+    align-items: center;
+    justify-content: center;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 0; /* Remove circular border */
+    border: none; /* Remove border */
+    background-color: transparent; /* No background color */
+    font-size: 2rem; /* Adjust font size if needed */
+}
+}
+
+/*LAPTOP*/
+@media (min-width:1024px) {
+    .navbar{
+        width: 100%;
+        height: 10%;
+    }
+
+    .navbar-row-top ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Ensure consistent spacing between items */
+        padding: 0;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin-right: 11rem; /* Keep right margin as is */
+        margin-left: 8.8rem;
+        transform: translateX(1%); /* Shift the entire list 8rem to the left */
+    }
+
+    .navbar-row-top li{
+        margin: 0 2rem;
+    }
+
+    .navbar-row-bottom ul {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Ensure consistent spacing between items */
+        padding: 0;
+        list-style-type: none; /* Remove bullet points */
+        width: 100%; /* Full width for better alignment */
+        margin-left: 0; /* Remove excessive left margin */
+        margin-right: 0%; /* Keep right margin as is */
+        transform: translateX(2.5%); /* Shift the entire list 8rem to the left */
+    }
+    
+    .navbar-row-bottom li {
+        margin: 0 12rem;
+    }
+
+    .navbar-row-top a, 
+    .navbar-row-bottom a {
+    display: inline-flex; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    transition: color 0.3s; /* Transition effects */
+}
+
+.image-time{
+    display: inline-flex; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    transition: background-color 0.3s, border-color 0.3s; /* Transition effects */
+}
+
+.image-date{
+    display: inline-flex; /* Inline flex for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    transition: background-color 0.3s, border-color 0.3s; /* Transition effects */
+    padding-top: 0.5rem;
+}
+
+.toggle-nav-btn {
+    padding-left: 25rem;
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.pages-navbar {
+    position: fixed; /* Ensure it appears above other elements */
+    width: 100%; /* Full width */
+    height: 10%; /* Set height */
+    /* background-color: rgb(255, 75, 234); Set background color */
+    z-index: 10; /* Ensure it appears above other elements */
+    display: none; /* Initially hidden */
+    justify-content: space-between; /* Center items */
+    align-items: center; /* Center items */
+}
+
+.pages-navbar-top ul, 
+.pages-navbar-bottom ul {
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Center items */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    list-style-type: none; /* Remove bullet points */
+    width: 100%;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.pages-navbar-top li,
+.pages-navbar-bottom li {
+    margin: 0 2rem; /* Adjust margin for uniform spacing */
+}
+
+.pages-navbar-top a, 
+.pages-navbar-bottom a {
+    display: inline-flex; /* Make it an inline flex container */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    width: 5vh; /* Circle diameter */
+    height: 5vh; /* Circle diameter */
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    border: 1px solid #000; /* Set default border */
+    border-radius: 50%; /* Make it circular */
+    background-color: white; /* Set background color */
+    transition: background-color 0.3s, border-color 0.3s; /* Add transitions */
+}
+
+.pages-navbar-bottom .no-circle {
+    display: inline-flex; /* Remove flex properties */
+    align-items: center;
+    justify-content: center;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 0; /* Remove circular border */
+    border: none; /* Remove border */
+    background-color: transparent; /* No background color */
+    font-size: 2rem; /* Adjust font size if needed */
+}
+
+.pages-navbar-bottom li:nth-last-child(2){
+    padding-left: 1rem;
+}
 }
