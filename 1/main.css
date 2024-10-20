@@ -65,6 +65,10 @@ html, body {
     transition: color 0.3s; /* Transition effects */
 }
 
+.navbar-row-top li:nth-last-child(1) a:hover{
+    color:#D36D62;
+}
+
 .navbar-row-top li:nth-last-child(2),
 .navbar-row-bottom li:nth-last-child(2) {
     display: none;
@@ -78,6 +82,17 @@ html, body {
     border: none;
     background-color: transparent;
     cursor: pointer;
+    display:inline-flex;
+    align-items: center; /* Center icon vertically */
+}
+
+.material-symbols-outlined{
+    font-size: 2rem;
+    margin-top:7%;
+}
+
+.material-symbols-outlined:hover{
+    color:#D36D62;
 }
 
 /* Hover effect for navbar items */
@@ -434,6 +449,10 @@ main {
     font-family: 'Instrument Serif', serif;
 }
 
+.navbar-row-top li:nth-last-child(1) a:hover{
+    color:#D36D62;
+}
+
 .image-time{
     padding: 0 0rem;
     font-size: 3rem;
@@ -444,16 +463,29 @@ main {
     padding-right: 12rem;
 }
 
-.toggle-nav-btn{
-    font-size: 3rem;
-    padding-right: 2.5rem;
+.toggle-nav-btn {
+    padding-left: 2rem;
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display:inline-flex;
+    align-items: center; /* Center icon vertically */
+}
+
+.material-symbols-outlined{
+    font-size: 2rem;
+    margin-top:7%;
+}
+.material-symbols-outlined:hover{
+    color:#D36D62;
 }
 
 .pages-navbar {
     position: fixed; /* Ensure it appears above other elements */
     width: 100%; /* Full width */
     height: 100%; /* Set height */
-    background-color: rgb(255, 255, 255); Set background color
+    background-color: rgb(255, 255, 255);
     z-index: 10; /* Ensure it appears above other elements */
     display: none; /* Initially hidden */
     justify-content: space-between; /* Center items */

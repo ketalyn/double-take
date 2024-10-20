@@ -41,7 +41,7 @@ nav, main {
 
 .refresh-button:hover {
     background-color: transparent !important; /* Force background to be transparent */
-    color:#d900ff;
+    color:#D36D62;
 }
 
 .navbar {
@@ -157,11 +157,23 @@ nav, main {
 
 /* Specific item styling */
 .toggle-nav-btn {
-    padding-right: 1.5rem;
+    padding-left: 2rem;
     font-size: 2rem;
     border: none;
     background-color: transparent;
     cursor: pointer;
+    display:inline-flex;
+    align-items: center; /* Center icon vertically */
+}
+
+.material-symbols-outlined{
+    font-size: 2rem;
+    margin-top:7%;
+    color:white;
+}
+
+.material-symbols-outlined:hover{
+    color:#D36D62;
 }
 
 /* Hover effect for navbar items */
@@ -385,7 +397,7 @@ main {
     
     .refresh-button:hover {
         background-color: transparent !important; /* Force background to be transparent */
-        color:#d900ff;
+        color:#D36D62;
     }
     
     .navbar {
@@ -500,11 +512,23 @@ main {
     
     /* Specific item styling */
     .toggle-nav-btn {
-        padding-right: 1.5rem;
+        padding-left: 2rem;
         font-size: 2rem;
         border: none;
         background-color: transparent;
         cursor: pointer;
+        display:inline-flex;
+        align-items: center; /* Center icon vertically */
+    }
+    
+    .material-symbols-outlined{
+        font-size: 2rem;
+        margin-top:7%;
+        color:white;
+    }
+
+    .material-symbols-outlined:hover{
+        color:#D36D62;
     }
     
     /* Hover effect for navbar items */

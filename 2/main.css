@@ -81,13 +81,36 @@ html, body {
     color:#D36D62;
 }
 
-/* Specific item styling */
 .toggle-nav-btn {
     padding-left: 2rem;
     font-size: 2rem;
     border: none;
     background-color: transparent;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center; /* Center icon vertically */
+}
+
+/* Default Material Icon styles */
+.material-symbols-outlined {
+    font-size: 2rem;
+    margin-top: 7%;
+    color: white; /* Default color */
+}
+
+/* Hover effect for the Material Icon */
+.material-symbols-outlined:hover {
+    color: #D36D62; /* Default hover color */
+}
+
+/* Styling when the button is randomly placed */
+.toggle-nav-btn.randomly-placed .material-symbols-outlined {
+    color: white; /* Different default color when randomly placed */
+}
+
+/* Hover effect for the randomly placed button */
+.toggle-nav-btn.randomly-placed:hover .material-symbols-outlined {
+    color: #2C283E /* Different hover color when randomly placed */
 }
 
 /* Hover effect for navbar items */
@@ -394,11 +417,35 @@ main {
 }
 
 .toggle-nav-btn {
-    padding-right: 0rem;
+    padding-left: 2rem;
     font-size: 2rem;
     border: none;
     background-color: transparent;
     cursor: pointer;
+    display:inline-flex;
+    align-items: center; /* Center icon vertically */
+}
+
+/* Default Material Icon styles */
+.material-symbols-outlined {
+    font-size: 2rem;
+    margin-top: 7%;
+    color: white; /* Default color */
+}
+
+/* Hover effect for the Material Icon */
+.material-symbols-outlined:hover {
+    color: #D36D62; /* Default hover color */
+}
+
+/* Styling when the button is randomly placed */
+.toggle-nav-btn.randomly-placed .material-symbols-outlined {
+    color: white; /* Different default color when randomly placed */
+}
+
+/* Hover effect for the randomly placed button */
+.toggle-nav-btn.randomly-placed:hover .material-symbols-outlined {
+    color: #2C283E /* Different hover color when randomly placed */
 }
 
 .pages-navbar {
